@@ -1105,10 +1105,13 @@ body.cart-open {
     gap: 8px;
     padding-right: 8px;
   }
-
   .floating-reviews-track {
-    animation-duration: 90s;
+    animation: floatingReviews 140s linear infinite;
+    width: max-content;
+    will-change: transform;
   }
+}
+
 .floating-reviews-section::before,
 .floating-reviews-section::after {
   content: "";
