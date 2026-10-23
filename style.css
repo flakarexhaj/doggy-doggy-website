@@ -1106,10 +1106,24 @@ body.cart-open {
     padding-right: 8px;
   }
 
+
   .floating-reviews-track {
     animation-duration: 90s;
   }
+}
+
+/* Gradient edges */
 .floating-reviews-section::before,
+.floating-reviews-section::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 35px;
+  z-index: 2;
+  pointer-events: none;
+}
+
 .floating-reviews-section::after {
   content: "";
   position: absolute;
