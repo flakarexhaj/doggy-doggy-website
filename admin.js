@@ -317,7 +317,7 @@ if (menuContainer) {
   renderMenu();
 }
 
-const DOGGY_API = "http://127.0.0.1:8000";
+const DOGGY_API = "https://doggy-doggy-api.onrender.com";
 
 async function doggyApiRequest(path, options = {}) {
   const token = sessionStorage.getItem("doggyAdminToken");

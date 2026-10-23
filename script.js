@@ -530,7 +530,7 @@ if (sessionError) {
 }
 
 const session = sessionData.session;
-    const response = await fetch("http://127.0.0.1:8000/orders", {
+    const response = await fetch("https://doggy-doggy-api.onrender.com", {
       method: "POST",
      headers: {
   "Content-Type": "application/json",
@@ -894,7 +894,7 @@ function syncMenuCartButtons() {
 
 /* Sync website menu with Supabase */
 (async function syncAdminMenuWithWebsite() {
-  const API_URL = "http://127.0.0.1:8000";
+  const API_URL = "https://doggy-doggy-api.onrender.com";
 
   const menuGrid = document.querySelector(".menu-grid");
   if (!menuGrid) return;
@@ -1113,7 +1113,7 @@ const profileCity = document.getElementById("profile-city");
 const ordersMessage = document.getElementById("orders-message");
 const customerOrders = document.getElementById("customer-orders");
 
-const CUSTOMER_API_URL = "http://127.0.0.1:8000";
+const CUSTOMER_API_URL = "https://doggy-doggy-api.onrender.com";
 
 function openAccountDrawer() {
   accountDrawer?.classList.add("open");
