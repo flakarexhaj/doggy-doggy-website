@@ -1101,24 +1101,14 @@ body.cart-open {
     font-size: 10px;
   }
 
-@media (max-width: 600px) {
-  .floating-reviews-track {
-    display: flex;
-    width: max-content;
-    gap: 0;
-    animation: floatingReviews 120s linear infinite;
-    will-change: transform;
-  }
-
   .floating-reviews-group {
-    display: flex;
-    flex: 0 0 auto;
-    width: max-content;
     gap: 8px;
     padding-right: 8px;
   }
-}
 
+  .floating-reviews-track {
+    animation-duration: 90s;
+  }
 .floating-reviews-section::before,
 .floating-reviews-section::after {
   content: "";
