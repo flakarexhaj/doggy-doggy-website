@@ -530,7 +530,7 @@ if (sessionError) {
 }
 
 const session = sessionData.session;
-    const response = await fetch("https://doggy-doggy-api.onrender.com", {
+    const response = await fetch("https://doggy-doggy-api.onrender.com/orders",{
       method: "POST",
      headers: {
   "Content-Type": "application/json",
