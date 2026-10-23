@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DoggyDoggy | Admin Dashboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="admin.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js" defer></script>
+</head><body>
+<div class="admin-layout">
+<aside class="admin-sidebar"><a class="brand" href="#dashboard">
+  <img src="images/doggy-logo2.png" alt="Doggy Doggy Logo" class="admin-logo">
+</a><p class="sidebar-label">WORKSPACE</p>
+<nav><a href="#dashboard" class="active" data-view="dashboard"><span>▦</span> Dashboard</a><a href="#orders" data-view="orders"><span>▤</span> Orders</a><a href="#menu" data-view="menu"><span>☷</span> Menu Management</a><a href="#analytics" data-view="analytics"><span>▥</span> Analytics</a></nav>
+<div class="sidebar-bottom"><span class="online-dot"></span><div><strong>Admin workspace</strong><small>DoggyDoggy restaurant</small></div></div></aside>
+<main class="admin-main"><header class="admin-header"><div><p class="eyebrow">RESTAURANT OVERVIEW</p><h1>Dashboard</h1><p class="muted" id="dashboard-date">Live business performance</p></div><div class="header-actions"><span class="live-pill"><i></i> Live data</span><button class="btn btn-dark" id="refreshDashboard" type="button">↻ Refresh data</button></div></header>
+<section class="stats-grid" id="statsGrid">
+  
+<article class="stat-card"><div class="stat-top"><span>Net sales today</span><span class="stat-icon orange">€</span></div><h2 id="stat-revenue">€0.00</h2><p>Excludes cancelled orders</p></article>
+<article class="stat-card"><div class="stat-top"><span>Orders today</span><span class="stat-icon blue">↗</span></div><h2 id="stat-total-orders">0</h2><p>All order types</p></article>
+<article class="stat-card"><div class="stat-top"><span>Pending orders</span><span class="stat-icon amber">◷</span></div><h2 id="stat-pending-orders">0</h2><p>Awaiting confirmation</p></article>
+<article class="stat-card"><div class="stat-top"><span>Out for delivery</span><span class="stat-icon purple">➤</span></div><h2 id="stat-out-for-delivery">0</h2><p>Currently on the way</p></article>
+<article class="stat-card"><div class="stat-top"><span>Completed today</span><span class="stat-icon green">✓</span></div><h2 id="stat-completed-orders">0</h2><p>Successfully completed</p></article>
+<article class="stat-card"><div class="stat-top"><span>Available products</span><span class="stat-icon dark">☷</span></div><h2 id="stat-active-products">0</h2><p>Items on the menu</p></article>
+</section>
+<section class="revenue-cards" id="revenueCards">
+<article class="metric-card"><span class="metric-label">Cash revenue</span><strong id="cashRevenue">€0.00</strong><small>Non-cancelled cash orders</small></article>
+<article class="metric-card"><span class="metric-label">Card revenue</span><strong id="cardRevenue">€0.00</strong><small>Non-cancelled card orders</small></article>
+<article class="metric-card"><span class="metric-label">Delivery fees</span><strong id="deliveryFees">€0.00</strong><small>Fees on non-cancelled deliveries</small></article>
+<article class="metric-card"><span class="metric-label">Average order value</span><strong id="averageOrderValue">€0.00</strong><small>Net sales ÷ valid orders</small></article>
+</section>
+<section class="dashboard-panel" id="revenueTrendPanel"><div class="panel-heading"><div><p class="eyebrow">SALES PERFORMANCE</p><h2>Revenue trend</h2><p>Daily revenue across the last 30 days.</p></div><span class="panel-chip">Last 30 days</span></div><div class="chart-wrap trend-wrap"><canvas id="revenueTrendChart" aria-label="Revenue trend chart"></canvas></div></section>
+<section class="chart-grid">
+<article class="dashboard-panel chart-panel"><div class="panel-heading"><div><h2>Payment method</h2><p>Order count by payment method</p></div></div><div class="chart-wrap donut-wrap"><canvas id="paymentMethodChart"></canvas></div><div class="chart-legend" id="paymentMethodLegend"></div></article>
+<article class="dashboard-panel chart-panel"><div class="panel-heading"><div><h2>Delivery vs pickup</h2><p>How customers receive orders</p></div></div><div class="chart-wrap donut-wrap"><canvas id="orderTypeChart"></canvas></div><div class="chart-legend" id="orderTypeLegend"></div></article>
+<article class="dashboard-panel chart-panel"><div class="panel-heading"><div><h2>Order status</h2><p>Current order pipeline</p></div></div><div class="chart-wrap"><canvas id="orderStatusChart"></canvas></div></article>
+<article class="dashboard-panel chart-panel"><div class="panel-heading"><div><h2>Peak hours</h2><p>Order volume by hour of day</p></div></div><div class="chart-wrap"><canvas id="peakHoursChart"></canvas></div></article>
+</section>
+<section class="dashboard-panel"><div class="panel-heading"><div><p class="eyebrow">PRODUCT PERFORMANCE</p><h2>Top-selling products</h2><p>Ranked by units sold, excluding cancelled orders.</p></div></div><div id="topSellingProducts" class="top-products"><p class="empty-state">Loading product performance…</p></div></section>
+<section class="dashboard-panel" id="analytics" hidden><div class="panel-heading"><div><p class="eyebrow">DEEP DIVE</p><h2>Analytics</h2><p>Revenue and order data from the database.</p></div></div><div class="analytics-summary" id="analyticsSummary"></div><div class="chart-wrap trend-wrap"><canvas id="analyticsRevenueChart"></canvas></div><div class="table-scroll"><table><thead><tr><th>Date</th><th>Orders</th><th>Revenue</th></tr></thead><tbody id="dailyAnalyticsRows"></tbody></table></div></section>
+<section class="dashboard-panel" id="orders"><div class="panel-heading"><div><p class="eyebrow">ORDER MANAGEMENT</p><h2>Recent orders</h2><p>Search, review payment details and update statuses.</p></div><button type="button" class="btn btn-outline" id="viewAllOrders">View all orders</button></div>
+<div class="orders-toolbar"><input type="search" id="orderSearch" placeholder="Search order ID, customer or phone…" aria-label="Search orders"><select id="orderStatusFilter" aria-label="Filter order status"><option value="all">All statuses</option><option value="pending">Pending</option><option value="confirmed">Confirmed</option><option value="preparing">Preparing</option><option value="out_for_delivery">Out for delivery</option><option value="completed">Completed</option><option value="cancelled">Cancelled</option></select><select id="orderTypeFilter" aria-label="Filter order type"><option value="all">Delivery + pickup</option><option value="delivery">Delivery</option><option value="pickup">Pickup</option></select><select id="paymentMethodFilter" aria-label="Filter payment method"><option value="all">All payments</option><option value="cash">Cash</option><option value="card">Card</option></select></div>
+<div class="table-scroll"><table class="orders-table"><thead><tr><th>Order ID</th><th>Customer</th><th>Type</th><th>Payment method</th><th>Payment status</th><th>Order status</th><th>Items</th><th>Subtotal</th><th>Delivery fee</th><th>Total</th><th>Time</th></tr></thead><tbody id="recentOrdersList"><tr><td colspan="11" class="table-message">Loading orders…</td></tr></tbody></table></div><p class="table-footnote">Payment status is managed separately from order status. Card payments are not automatically processed by this dashboard.</p></section>
+<section class="dashboard-panel" id="menu" hidden><div class="panel-heading"><div><p class="eyebrow">CATALOG</p><h2>Menu management</h2><p>Manage products, prices and availability.</p></div></div><div id="menu-management"></div></section>
+<footer class="admin-footer">DoggyDoggy Admin <span>·</span> Restaurant operations</footer></main></div>
+<script>const token=sessionStorage.getItem('doggyAdminToken');if(!token){window.location.replace('login.html');}</script><script src="admin.js" defer></script></body></html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doggy Doggy | My Account</title>
+
+  <style>
+    .account-logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.account-logo img {
+  display: block;
+  width: 180px;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 20px;
+      background: #fff8f0;
+      font-family: Arial, sans-serif;
+      color: #292929;
+    }
+
+    .account-card {
+      width: 100%;
+      max-width: 420px;
+      padding: 32px;
+      background: white;
+      border-radius: 18px;
+      box-shadow: 0 10px 35px #00000012;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      text-align: center;
+    }
+
+    h1 span {
+      color: #ffd928;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: #777;
+      margin-bottom: 24px;
+    }
+
+    .tabs {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 22px;
+    }
+
+    .tabs button {
+      flex: 1;
+      padding: 12px;
+      margin: 0;
+      border: 0;
+      border-radius: 8px;
+      background: #f2eee8;
+      color: #292929;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .tabs button.active {
+      background: #0f4c97;
+      color: white;
+    }
+
+    label {
+      display: block;
+      margin: 15px 0 7px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 15px;
+    }
+
+    input:focus {
+      outline: 2px solid #0f4c97;
+      border-color: #0f4c97;
+    }
+
+    .submit-button {
+      width: 100%;
+      margin-top: 22px;
+      padding: 13px;
+      border: 0;
+      border-radius: 8px;
+      background: #0f4c97;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:disabled {
+      opacity: 0.6;
+      cursor: wait;
+    }
+
+    #message {
+      font-size: 14px;
+      line-height: 1.5;
+      overflow-wrap: anywhere;
+    }
+
+    .links {
+      margin-top: 22px;
+      text-align: center;
+    }
+
+    .links a {
+      display: block;
+      margin-top: 12px;
+      color: #8a4b23;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="account-card">
+    <a href="index.html" class="account-logo">
+  <img src="images/doggy-logo2.png" alt="Doggy Doggy Logo">
+</a>
+    <p class="subtitle">Your favourite HotDog, your own account.</p>
+
+    <div class="tabs">
+      <button id="login-tab" class="active" type="button">
+        Log In
+      </button>
+      <button id="signup-tab" type="button">
+        Sign Up
+      </button>
+    </div>
+
+
+<form id="account-form">
+  <div id="name-field" hidden>
+    <label for="full-name">Full name</label>
+    <input id="full-name" type="text" autocomplete="name">
+
+    <label for="account-phone">Phone number</label>
+    <input id="account-phone" type="tel" autocomplete="tel">
+
+    <label for="account-address">Delivery address</label>
+    <input id="account-address" type="text" autocomplete="street-address">
+
+    <label for="account-city">City</label>
+    <input id="account-city" type="text" autocomplete="address-level2">
+  </div>
+
+  <label for="account-email">Email</label>
+  <input
+    id="account-email"
+    type="email"
+    autocomplete="email"
+    required
+  >
+
+  <label for="account-password">Password</label>
+  <input
+    id="account-password"
+    type="password"
+    autocomplete="current-password"
+    minlength="6"
+    required
+  >
+
+  <button id="submit-button" class="submit-button" type="submit">
+    Log In
+  </button>
+
+  <p id="message" role="status" aria-live="polite"></p>
+</form>
+
+    <div class="links">
+      <a href="index.html">Continue as guest / Back to menu</a>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="account.js"></script>
+</body>
+</html>
