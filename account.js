@@ -19,7 +19,8 @@ const emailInput = document.getElementById("account-email");
 const passwordInput = document.getElementById("account-password");
 const submitButton = document.getElementById("submit-button");
 const message = document.getElementById("message");
-
+const forgotPasswordLink = document.getElementById("forgot-password-link");
+const forgotPasswordWrap = document.getElementById("forgot-password-wrap");
 
 let mode = "login";
 
@@ -32,10 +33,11 @@ function setMode(newMode) {
   signupTab.classList.toggle("active", isSignup);
 
   nameField.hidden = !isSignup;
+
   fullName.required = isSignup;
   phoneInput.required = isSignup;
   addressInput.required = isSignup;
-  cityInput.required = isSignup; 
+  cityInput.required = isSignup;
 
   passwordInput.autocomplete = isSignup
     ? "new-password"
@@ -45,13 +47,49 @@ function setMode(newMode) {
     ? "Create Account"
     : "Log In";
 
+  forgotPasswordWrap.hidden = isSignup;
   message.textContent = "";
 }
 
 loginTab.addEventListener("click", () => setMode("login"));
 signupTab.addEventListener("click", () => setMode("signup"));
-console.log("Signup button:", signupTab);
-console.log("Current page:", window.location.pathname);
+
+forgotPasswordLink.addEventListener("click", async (event) => {
+  event.preventDefault();
+
+  const email = emailInput.value.trim();
+  message.textContent = "";
+
+  if (!email) {
+    message.textContent = "Please enter your email address first.";
+    emailInput.focus();
+    return;
+  }
+
+  forgotPasswordLink.style.pointerEvents = "none";
+
+  try {
+    const redirectUrl =
+      "https://doggy-doggy-website-nine.vercel.app/reset-password.html";
+
+    const { error } = await supabaseClient.auth.resetPasswordForEmail(
+      email,
+      {
+        redirectTo: redirectUrl
+      }
+    );
+
+    if (error) throw error;
+
+    message.textContent =
+      "If an account exists for this email, a password reset link has been sent. Please check your inbox.";
+  } catch (error) {
+    message.textContent =
+      error.message || "Could not send the reset email.";
+  } finally {
+    forgotPasswordLink.style.pointerEvents = "";
+  }
+});
 
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
@@ -60,27 +98,28 @@ form.addEventListener("submit", async (event) => {
   const password = passwordInput.value;
   const name = fullName.value.trim();
   const phone = phoneInput.value.trim();
-const address = addressInput.value.trim();
-const city = cityInput.value.trim();
+  const address = addressInput.value.trim();
+  const city = cityInput.value.trim();
 
   message.textContent = "";
   submitButton.disabled = true;
 
   try {
     if (mode === "signup") {
- if (!name || !phone || !address || !city) {
-  throw new Error("Please complete all required fields.");
-}
+      if (!name || !phone || !address || !city) {
+        throw new Error("Please complete all required fields.");
+      }
+
       const { data, error } = await supabaseClient.auth.signUp({
         email,
         password,
         options: {
-         data: {
-  full_name: name,
-  phone: phone,
-  address: address,
-  city: city
-}
+          data: {
+            full_name: name,
+            phone: phone,
+            address: address,
+            city: city
+          }
         }
       });
 

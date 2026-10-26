@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,18 +8,18 @@
 
   <style>
     .account-logo {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 15px;
-}
+      display: flex;
+      justify-content: center;
+      margin-bottom: 15px;
+    }
 
-.account-logo img {
-  display: block;
-  width: 180px;
-  max-width: 100%;
-  height: auto;
-  object-fit: contain;
-}
+    .account-logo img {
+      display: block;
+      width: 180px;
+      max-width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
 
     * {
       box-sizing: border-box;
@@ -42,15 +43,6 @@
       background: white;
       border-radius: 18px;
       box-shadow: 0 10px 35px #00000012;
-    }
-
-    h1 {
-      margin: 0 0 8px;
-      text-align: center;
-    }
-
-    h1 span {
-      color: #ffd928;
     }
 
     .subtitle {
@@ -136,64 +128,81 @@
       margin-top: 12px;
       color: #8a4b23;
     }
+
+    #forgot-password-wrap {
+      text-align: right;
+      margin-top: 10px;
+    }
+
+    #forgot-password-link {
+      color: #8a4b23;
+      font-size: 14px;
+    }
   </style>
 </head>
 
 <body>
   <main class="account-card">
     <a href="index.html" class="account-logo">
-  <img src="images/doggy-logo2.png" alt="Doggy Doggy Logo">
-</a>
+      <img src="images/doggy-logo2.png" alt="Doggy Doggy Logo">
+    </a>
+
     <p class="subtitle">Your favourite HotDog, your own account.</p>
 
     <div class="tabs">
       <button id="login-tab" class="active" type="button">
         Log In
       </button>
+
       <button id="signup-tab" type="button">
         Sign Up
       </button>
     </div>
 
+    <form id="account-form">
+      <div id="name-field" hidden>
+        <label for="full-name">Full name</label>
+        <input id="full-name" type="text" autocomplete="name">
 
-<form id="account-form">
-  <div id="name-field" hidden>
-    <label for="full-name">Full name</label>
-    <input id="full-name" type="text" autocomplete="name">
+        <label for="account-phone">Phone number</label>
+        <input id="account-phone" type="tel" autocomplete="tel">
 
-    <label for="account-phone">Phone number</label>
-    <input id="account-phone" type="tel" autocomplete="tel">
+        <label for="account-address">Delivery address</label>
+        <input id="account-address" type="text" autocomplete="street-address">
 
-    <label for="account-address">Delivery address</label>
-    <input id="account-address" type="text" autocomplete="street-address">
+        <label for="account-city">City</label>
+        <input id="account-city" type="text" autocomplete="address-level2">
+      </div>
 
-    <label for="account-city">City</label>
-    <input id="account-city" type="text" autocomplete="address-level2">
-  </div>
+      <label for="account-email">Email</label>
+      <input
+        id="account-email"
+        type="email"
+        autocomplete="email"
+        required
+      >
 
-  <label for="account-email">Email</label>
-  <input
-    id="account-email"
-    type="email"
-    autocomplete="email"
-    required
-  >
+      <label for="account-password">Password</label>
+      <input
+        id="account-password"
+        type="password"
+        autocomplete="current-password"
+        minlength="6"
+        required
+      >
 
-  <label for="account-password">Password</label>
-  <input
-    id="account-password"
-    type="password"
-    autocomplete="current-password"
-    minlength="6"
-    required
-  >
+      <div id="forgot-password-wrap">
+        <a id="forgot-password-link" href="#">
+          Forgot password?
+        </a>
+      </div>
 
-  <button id="submit-button" class="submit-button" type="submit">
-    Log In
-  </button>
+      <button id="submit-button" class="submit-button" type="submit">
+        Log In
+      </button>
 
-  <p id="message" role="status" aria-live="polite"></p>
-</form>
+      <p id="message" role="status" aria-live="polite"></p>
+    </form>
 
     <div class="links">
       <a href="index.html">Continue as guest / Back to menu</a>
