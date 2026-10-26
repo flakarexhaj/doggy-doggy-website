@@ -1064,9 +1064,17 @@ body.cart-open {
   .floating-review {
     flex-basis: 240px;
     width: 240px;
-    padding: 21px;
-    margin-right: 16px;
+    padding: 16px;
+    margin-right: 14px;
   }
+  .floating-review-text {
+    font-size: 12.5px;
+    line-height: 1.6;
+    margin: 14px 0;
+  }
+  .floating-stars { font-size: 16px; }
+  .floating-review-avatar { width: 36px; height: 36px; }
+  .floating-review-author h3 { font-size: 13px; }
 }
 
 .floating-reviews-viewport::before,
