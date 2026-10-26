@@ -114,20 +114,20 @@ def get_customer_id(authorization: str | None) -> str | None:
         )
     
 
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        origin.strip()
-        for origin in os.getenv(
-            "FRONTEND_ORIGINS",
-            "http://127.0.0.1:5500,http://localhost:5500"
-        ).split(",")
-        if origin.strip()
+        "https://doggydoggy.store",
+        "https://www.doggydoggy.store",
+        "http://127.0.0.1:5500",
+        "http://localhost:5500",
     ],
     allow_credentials=False,
     allow_methods=["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
     allow_headers=["Content-Type", "Authorization"],
 )
+
 
 
 
