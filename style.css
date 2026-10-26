@@ -1018,15 +1018,15 @@ body.cart-open {
 
 .floating-stars {
   color: var(--yellow, #ffd400);
-  font-size: 19px;
+  font-size: 16px;
   letter-spacing: 3px;
 }
 
 .floating-review-text {
   color: #eee;
-  font-size: 14px;
-  line-height: 1.8;
-  margin: 20px 0;
+  font-size: 12.5px;
+  line-height: 1.6;
+  margin: 14px 0;
   flex: 1;
 }
 
@@ -1038,8 +1038,8 @@ body.cart-open {
 }
 
 .floating-review-avatar {
-  width: 42px;
-  height: 42px;
+  width: 36px;
+  height: 36px;
   flex-shrink: 0;
   border-radius: 50%;
   display: grid;
@@ -1050,7 +1050,7 @@ body.cart-open {
 }
 
 .floating-review-author h3 {
-  font-size: 14px;
+  font-size: 13px;
   margin: 0 0 5px;
 }
 
@@ -1062,8 +1062,8 @@ body.cart-open {
 @media (max-width: 600px) {
   .floating-reviews-section { padding: 35px 0; }
   .floating-review {
-    flex-basis: 275px;
-    width: 275px;
+    flex-basis: 240px;
+    width: 240px;
     padding: 21px;
     margin-right: 16px;
   }
