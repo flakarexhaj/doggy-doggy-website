@@ -69,8 +69,8 @@ forgotPasswordLink.addEventListener("click", async (event) => {
   forgotPasswordLink.style.pointerEvents = "none";
 
   try {
-    const redirectUrl =
-      "https://doggy-doggy-website-nine.vercel.app/reset-password.html";
+const redirectUrl =
+  "https://doggydoggy.store/reset-password.html";
 
     const { error } = await supabaseClient.auth.resetPasswordForEmail(
       email,
