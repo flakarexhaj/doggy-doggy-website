@@ -939,9 +939,7 @@ body.cart-open {
   color: white;
   transition: all 0.3s ease;
 }
-
-
-/* Floating Customer Reviews */
+/* ===== Floating Customer Reviews (Safari + Chrome safe) ===== */
 .floating-reviews-section {
   padding: 85px 0;
   background: #111;
@@ -957,7 +955,7 @@ body.cart-open {
 }
 
 .floating-reviews-eyebrow {
-  color: var(--yellow);
+  color: var(--yellow, #ffd400);
   font-size: 12px;
   font-weight: 800;
   letter-spacing: 3px;
@@ -972,25 +970,38 @@ body.cart-open {
   color: #aaa;
 }
 
-.floating-reviews-track {
-  display: flex;
-  width: max-content;
-  animation: floatingReviews 65s linear infinite;
+.floating-reviews-viewport {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding: 10px 0;
 }
 
-.floating-reviews-track:hover {
-  animation-play-state: paused;
+.floating-reviews-track {
+  display: flex;
+  flex-wrap: nowrap;
+  width: max-content;
+  gap: 0;
+  animation: none;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 .floating-reviews-group {
   display: flex;
+  flex-wrap: nowrap;
+  flex: 0 0 auto;
   align-items: stretch;
-  gap: 22px;
-  padding-right: 22px;
 }
 
+/* margin-right instead of gap: Safari measures this exactly */
 .floating-review {
   flex: 0 0 320px;
+  width: 320px;
+  margin-right: 22px;
   box-sizing: border-box;
   padding: 25px;
   background: #1d1d1d;
@@ -998,16 +1009,15 @@ body.cart-open {
   border-radius: 16px;
   display: flex;
   flex-direction: column;
-  transition: border-color 0.3s, transform 0.3s;
+  transition: border-color 0.3s;
 }
 
 .floating-review:hover {
-  border-color: var(--yellow);
-  transform: translateY(-5px);
+  border-color: var(--yellow, #ffd400);
 }
 
 .floating-stars {
-  color: var(--yellow);
+  color: var(--yellow, #ffd400);
   font-size: 19px;
   letter-spacing: 3px;
 }
@@ -1034,7 +1044,7 @@ body.cart-open {
   border-radius: 50%;
   display: grid;
   place-items: center;
-  background: var(--yellow);
+  background: var(--yellow, #ffd400);
   color: #111;
   font-weight: 800;
 }
@@ -1049,71 +1059,18 @@ body.cart-open {
   font-size: 12px;
 }
 
-@keyframes floatingReviews {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-
 @media (max-width: 600px) {
-  .floating-reviews-section {
-    padding: 35px 0;
-    min-height: 0px;
-  }
-
+  .floating-reviews-section { padding: 35px 0; }
   .floating-review {
-    flex: 0 0 calc((100vw - 48px) / 3);
-    min-width: 0;
-    padding: 12px;
-  }
-
-  .floating-review-text {
-    font-size: 11px;
-    line-height: 1.5;
-    margin: 12px 0;
-  }
-
-  .floating-stars {
-    font-size: 13px;
-    letter-spacing: 1px;
-  }
-
-  .floating-review-author {
-    gap: 6px;
-    flex-wrap: wrap;
-  }
-
-  .floating-review-avatar {
-    width: 28px;
-    height: 28px;
-    font-size: 11px;
-  }
-
-  .floating-review-author h3 {
-    font-size: 11px;
-  }
-
-  .floating-review-author span {
-    font-size: 10px;
-  }
-
-  .floating-reviews-group {
-    gap: 8px;
-    padding-right: 8px;
-  }
-  .floating-reviews-track {
-    animation: floatingReviews 140s linear infinite;
-    width: max-content;
-    will-change: transform;
+    flex-basis: 275px;
+    width: 275px;
+    padding: 21px;
+    margin-right: 16px;
   }
 }
 
-.floating-reviews-section::before,
-.floating-reviews-section::after {
+.floating-reviews-viewport::before,
+.floating-reviews-viewport::after {
   content: "";
   position: absolute;
   top: 0;
@@ -1122,16 +1079,8 @@ body.cart-open {
   z-index: 2;
   pointer-events: none;
 }
-
-.floating-reviews-section::before {
-  left: 0;
-  background: linear-gradient(to right, #111, transparent);
-}
-
-.floating-reviews-section::after {
-  right: 0;
-  background: linear-gradient(to left, #111, transparent);
-}
+.floating-reviews-viewport::before { left: 0;  background: linear-gradient(to right, #111, rgba(17,17,17,0)); }
+.floating-reviews-viewport::after  { right: 0; background: linear-gradient(to left,  #111, rgba(17,17,17,0)); }
 
 .admin-login-link {
     color: white;
