@@ -5,7 +5,18 @@
 
 [Live Website](https://doggydoggy.store) · [GitHub Repository](https://github.com/flakarexhaj/doggy-doggy-website)
 
----
+<img width="1440" height="900" alt="Screenshot 2026-10-26 at 8 54 51 PM" src="https://github.com/user-attachments/assets/773390b0-9e65-4027-9c2d-82f620d6ab7e" />
+<img width="1440" height="900" alt="Screenshot 2026-10-26 at 8 55 08 PM" src="https://github.com/user-attachments/assets/0ec3a631-8b47-4907-8bf9-c707faecbdd2" />
+<img width="1440" height="900" alt="Screenshot 2026-10-26 at 8 56 27 PM" src="https://github.com/user-attachments/assets/02894bba-9ed3-4ebc-a709-a6df2c854317" />
+<img width="1440" height="900" alt="Screenshot 2026-10-26 at 8 56 14 PM" src="https://github.com/user-attachments/assets/736f12a3-35a6-47eb-a907-d069403353f3" />
+<img width="1440" height="900" alt="Screenshot 2026-10-26 at 8 55 01 PM" src="https://github.com/user-attachments/assets/87246262-6e71-43b3-a5e0-6eae87058b25" />
+<img width="1440" height="900" alt="Screenshot 2026-10-26 at 8 56 09 PM" src="https://github.com/user-attachments/assets/f0a95e5e-7b65-4b8b-80b0-8f9a052362f7" />
+<img width="1440" height="900" alt="Screenshot 2026-10-26 at 8 56 02 PM" src="https://github.com/user-attachments/assets/b4fec412-ef88-47bc-bc4c-bf7a8bbccdb9" /><img width="1440" height="900" alt="Screenshot 2026-10-26 at 8 55 14 PM" src="https://github.com/user-attachments/assets/df8deb11-68e6-4b1e-bc2d-3fa07378ab46" />
+<img width="1586" height="992" alt="Anonymized Doggy Doggy Orders Dashboard" src="https://github.com/user-attachments/assets/177b17d8-9e1c<img width="1440" height="900" alt="Screenshot 2026-10-26 at 8 55 33 PM" src="https://github.com/user-attachments/assets/f482129d-e941-4262-a067-06adabf44482" />
+<img width="1440" height="900" alt="Screenshot 2026-10-26 at 8 55 39 PM" src="https://github.com/user-attachments/assets/8753c230-ce1f-45b1-90cd-93139736ae60" />
+-4088-910d-f26a3cc0e335" />
+
+
 
 ## Project Overview
 
