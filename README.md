@@ -16,6 +16,9 @@
 <img width="1440" height="900" alt="Screenshot 2026-10-26 at 8 55 39 PM" src="https://github.com/user-attachments/assets/8753c230-ce1f-45b1-90cd-93139736ae60" />
 -4088-910d-f26a3cc0e335" />
 
+<img width="394" height="742" alt="Screenshot 2026-10-27 at 11 05 22 PM" src="https://github.com/user-attachments/assets/e949685e-6129-4ea7-81d2-328862d68617" />
+<img width="415" height="750" alt="Screenshot 2026-10-27 at 11 05 00 PM" src="https://github.com/user-attachments/assets/05b8489d-3c6d-44e3-ab82-9f4ecc0042f5" />
+<img width="420" height="743" alt="Screenshot 2026-10-27 at 11 04 38 PM" src="https://github.com/user-attachments/assets/8cd170da-616d-49c0-a937-216209317ae7" />
 
 
 ## Project Overview
