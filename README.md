@@ -14,7 +14,6 @@
 <img width="1440" height="900" alt="Screenshot 2026-10-26 at 8 56 02 PM" src="https://github.com/user-attachments/assets/b4fec412-ef88-47bc-bc4c-bf7a8bbccdb9" /><img width="1440" height="900" alt="Screenshot 2026-10-26 at 8 55 14 PM" src="https://github.com/user-attachments/assets/df8deb11-68e6-4b1e-bc2d-3fa07378ab46" />
 <img width="1586" height="992" alt="Anonymized Doggy Doggy Orders Dashboard" src="https://github.com/user-attachments/assets/177b17d8-9e1c<img width="1440" height="900" alt="Screenshot 2026-10-26 at 8 55 33 PM" src="https://github.com/user-attachments/assets/f482129d-e941-4262-a067-06adabf44482" />
 <img width="1440" height="900" alt="Screenshot 2026-10-26 at 8 55 39 PM" src="https://github.com/user-attachments/assets/8753c230-ce1f-45b1-90cd-93139736ae60" />
--4088-910d-f26a3cc0e335" />
 
 <img width="415" height="750" alt="Screenshot 2026-10-27 at 11 05 00 PM" src="https://github.com/user-attachments/assets/05b8489d-3c6d-44e3-ab82-9f4ecc0042f5" />
 <img width="420" height="743" alt="Screenshot 2026-10-27 at 11 04 38 PM" src="https://github.com/user-attachments/assets/8cd170da-616d-49c0-a937-216209317ae7" />
